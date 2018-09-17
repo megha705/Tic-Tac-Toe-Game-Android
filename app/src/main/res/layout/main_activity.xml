@@ -2,13 +2,15 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="349dp"
-        android:layout_height="423dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="407dp"
+        android:layout_marginBottom="37dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="15dp"
@@ -21,6 +23,7 @@
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576"
         app:rowCount="3">
 
         <ImageView
@@ -39,7 +42,7 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="00dp"
             android:onClick="tap"
-            android:tag="2"/>
+            android:tag="2" />
 
         <ImageView
             android:id="@+id/imageView_red_3"
@@ -48,7 +51,7 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="0dp"
             android:onClick="tap"
-            android:tag="3"/>
+            android:tag="3" />
 
         <ImageView
             android:id="@+id/imageView_red_4"
@@ -57,7 +60,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="50dp"
             android:onClick="tap"
-            android:tag="4"/>
+            android:tag="4" />
 
         <ImageView
             android:id="@+id/imageView_red_5"
@@ -67,7 +70,7 @@
             android:layout_marginLeft="00dp"
             android:layout_marginTop="50dp"
             android:onClick="tap"
-            android:tag="5"/>
+            android:tag="5" />
 
         <ImageView
             android:id="@+id/imageView_red_6"
@@ -77,7 +80,7 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="50dp"
             android:onClick="tap"
-            android:tag="6"/>
+            android:tag="6" />
 
         <ImageView
             android:id="@+id/imageView_red_7"
@@ -86,7 +89,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="50dp"
             android:onClick="tap"
-            android:tag="7"/>
+            android:tag="7" />
 
         <ImageView
             android:id="@+id/imageView_red_8"
@@ -96,7 +99,7 @@
             android:layout_marginLeft="00dp"
             android:layout_marginTop="50dp"
             android:onClick="tap"
-            android:tag="8"/>
+            android:tag="8" />
         <!--app:srcCompat="@drawable/red"-->
         <ImageView
             android:id="@+id/imageView_red_9"
@@ -106,7 +109,42 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="50dp"
             android:onClick="tap"
-            android:tag="9"/>
+            android:tag="9" />
 
     </android.support.v7.widget.GridLayout>
+
+    <Button
+        android:id="@+id/bt_playagain"
+        android:layout_width="124dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginRight="184dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="8dp"
+        android:text="PLay Again"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.982" />
+
+    <TextView
+        android:id="@+id/tv_win"
+        android:layout_width="124dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Won!!"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

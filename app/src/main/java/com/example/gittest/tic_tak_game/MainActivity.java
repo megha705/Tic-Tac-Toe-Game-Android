@@ -3,12 +3,17 @@ package com.example.gittest.tic_tak_game;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ImageView red_end_2;
-
+    Button playagain;
+    TextView win;
+    GridLayout myGridView;
     int [] state= {2,2,2,2,2,2,2,2,2};
     int [][] winningpositions= {{1,2,3},{4,5,6},{7,8,9},{1,5,9},{3,5,7},{1,4,7},{3,6,9}};
     boolean active= true;
@@ -46,15 +51,39 @@ public class MainActivity extends AppCompatActivity {
                 winner ="Red";
             }
             Toast.makeText(this, winner+ "You Win!", Toast.LENGTH_SHORT).show();
-
+                playagain=(Button) findViewById(R.id.bt_playagain);
+           // red_end_2=findViewById(R.id.imageView_red_8);
+            win=(TextView)findViewById(R.id.tv_win);
+            win.setText(winner+"has won!");
+            playagain.setVisibility(View.VISIBLE);
+            win.setVisibility(View.VISIBLE);
         }
+        playagain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                win=(TextView)findViewById(R.id.tv_win);
+
+                playagain.setVisibility(View.INVISIBLE);
+                win.setVisibility(View.INVISIBLE);
+                myGridView=(GridLayout)findViewById(R.id.gridLayout);
+                for(int i=0; i<myGridView.getChildCount(); i++) {
+
+                    TextView child = (TextView)myGridView.getChildAt(i);
+                ImageView count=(ImageView)myGridView.getChildAt(i);
+                count.setImageDrawable(null);
+                }
+                int [] state= {2,2,2,2,2,2,2,2,2};
+                int activeplayer = 0;
+                boolean active= true;
+            }
+        });
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        red_end_2=findViewById(R.id.imageView_red_8);
 
     }
 }
